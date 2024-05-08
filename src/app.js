@@ -36,6 +36,10 @@ let alienRows = 2;
 let alienColoumns = 3;
 let alienCount = 0; //number of aliens to defeat
 
+/**Bullets */
+let bulletArray = [];
+let bulletVelocityY = -10; //bullet moving speed
+
 let alienVelocityX = 1; //alien moving speed
 
 window.onload = function () {
@@ -59,6 +63,7 @@ window.onload = function () {
 
     requestAnimationFrame(update);
     document.addEventListener("keydown", moveShip);
+    document.addEventListener("keyup", shoot);
 }
 
 function update() {
@@ -89,6 +94,19 @@ function update() {
             context.drawImage(alienImg, alien.x, alien.y, alien.width, alien.height);
         }
     }
+
+    //bullets
+    for (let i = 0; i < bulletArray.length; i++){
+        let bullet = bulletArray[i];
+        bullet.y += bulletVelocityY;
+        context.fillStyle="black";
+        context.fillRect(bullet.x, bullet.y, bullet.width, bullet.height);
+    }
+
+    //clear bullets
+    while (bulletArray.length > 0 && (bulletArray[0].used || bulletArray[0].y , 0)){
+        bulletArray.shift(); //removes the first element of the array
+    }
 }
 
 function moveShip(e) {
@@ -115,4 +133,18 @@ function createAliens() {
         }
     }
     alienCount = alienArray.length;
+}
+
+function shoot(e){
+    if (e.code == "Space"){
+        //shoot
+        let bullet = {
+            x : ship.x + shipWidth * 15/32,
+            y : ship.y,
+            width : tileSize / 8,
+            height : tileSize / 2,
+            used : false //if bullet hits alien
+        }
+        bulletArray.push(bullet);
+    }
 }
