@@ -52,13 +52,13 @@ window.onload = function () {
     // context.fillStyle = "green";
     // context.fillRect(ship.x, ship.y, ship.width, ship.height);
     shipImg = new Image();
-    shipImg.src = "/imgs/hero.png";
+    shipImg.src = "/imgs/hero2.png";
     shipImg.onload = function () {
         context.drawImage(shipImg, ship.x, ship.y, ship.width, ship.height);
     };
 
     alienImg = new Image();
-    alienImg.src = "/imgs/special-invader.png";
+    alienImg.src = "/imgs/robot-invader.png";
     createAliens();
 
     requestAnimationFrame(update);
@@ -99,7 +99,7 @@ function update() {
     for (let i = 0; i < bulletArray.length; i++){
         let bullet = bulletArray[i];
         bullet.y += bulletVelocityY;
-        context.fillStyle="black";
+        context.fillStyle="yellow";
         context.fillRect(bullet.x, bullet.y, bullet.width, bullet.height);
 
         //bullet collision with aliens
