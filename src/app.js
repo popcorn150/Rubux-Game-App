@@ -101,11 +101,31 @@ function update() {
         bullet.y += bulletVelocityY;
         context.fillStyle="black";
         context.fillRect(bullet.x, bullet.y, bullet.width, bullet.height);
+
+        //bullet collision with aliens
+        for (let j = 0; j < alienArray.length; j++){
+            let alien = alienArray[j];
+            if (!bullet.used && alien.alive && detectCollision(bullet, alien)){
+                bullet.used = true;
+                alien.alive = false;
+                alienCount--;
+            }
+        }
     }
 
     //clear bullets
     while (bulletArray.length > 0 && (bulletArray[0].used || bulletArray[0].y , 0)){
         bulletArray.shift(); //removes the first element of the array
+    }
+
+    //next level
+    if (alienCount == 0) {
+        //increase the number of aliens in columns and rows by 1
+        alienColoumns = Math.min(alienColoumns + 1, column / 2 - 2); //cap at 16 / 2 - 2 = 6
+        alienRows = Math.min(alienRows + 1, rows - 4); //cap 16 - 4 = 12
+        alienArray = [];
+        bulletArray = [];
+        createAliens();
     }
 }
 
@@ -147,4 +167,11 @@ function shoot(e){
         }
         bulletArray.push(bullet);
     }
+}
+
+function detectCollision(a, b){
+    return a.x < b.x + b.width && //a's top left corner doesn't reach b's top right corner
+                a.x + a.width > b.x && //a's top right corner passes b's top left corner
+                a.y < b.y + b.height && //a's top left corner doesn't react b's bottom left corner
+                a.y + a.height > b.y; //a's bottom left corner passes b's bottom left corner 
 }
