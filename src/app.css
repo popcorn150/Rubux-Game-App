@@ -16,3 +16,43 @@ h1 {
     background-color: black;
     border: 3px solid purple;
 }
+
+/** Media Queries*/
+@media screen and (min-width: 567px) {
+    h1 {
+        font-size: 35px;
+    }
+
+    #playingBoard {
+        position: relative;
+        left: -5px;
+        width: 400px;
+        height: 400px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    body {
+        margin: 110px;
+    }
+
+    h1 {
+        font-size: 50px;
+    }
+
+    #playingBoard {
+        width: 600px;
+        height: 600px;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    body {
+        margin: 80px;
+    }
+
+    #playingBoard {
+        width: 750px;
+        height: 750px;
+    }
+}
