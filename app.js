@@ -52,13 +52,13 @@ window.onload = function () {
     // context.fillStyle = "green";
     // context.fillRect(ship.x, ship.y, ship.width, ship.height);
     shipImg = new Image();
-    shipImg.src = "/imgs/hero2.png";
+    shipImg.src = "hero2.png";
     shipImg.onload = function () {
         context.drawImage(shipImg, ship.x, ship.y, ship.width, ship.height);
     };
 
     alienImg = new Image();
-    alienImg.src = "/imgs/robot-invader.png";
+    alienImg.src = "robot-invader.png";
     createAliens();
 
     requestAnimationFrame(update);
