@@ -49,16 +49,14 @@ window.onload = function () {
     context = board.getContext("2d"); //used for drawing on the board
 
     /**Drawing the ship */
-    // context.fillStyle = "green";
-    // context.fillRect(ship.x, ship.y, ship.width, ship.height);
     shipImg = new Image();
-    shipImg.src = "hero2.png";
+    shipImg.src = "/imgs/hero1.png";
     shipImg.onload = function () {
         context.drawImage(shipImg, ship.x, ship.y, ship.width, ship.height);
     };
 
     alienImg = new Image();
-    alienImg.src = "robot-invader.png";
+    alienImg.src = "/imgs/invader-extras.png";
     createAliens();
 
     requestAnimationFrame(update);
