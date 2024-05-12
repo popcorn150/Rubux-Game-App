@@ -13,8 +13,10 @@
     <h1>RUBUX</h1>
     <canvas id="playingBoard"></canvas>
     <div class="btn-cntrls">
-        <img src="/imgs/left-arrowKey.svg" alt="Right ArrowKey" id="LBtn">
-        <img src="/imgs/right-arrowKey.svg" alt="Left ArrowKey" id="RBtn">
+        <img src="/imgs/left-arrowKey.svg" alt="Left ArrowKey" onclick="moveShipLeft()" id="LBtn">
+        <button id="shoot" onclick="shootAlien()"
+            style="background-color: brown; color: white; border: 1px solid burlywood; border-radius: 20px; width: 100px; margin-top: 10px;">SHOOT</button>
+        <img src="/imgs/right-arrowKey.svg" alt="Right ArrowKey" onclick="moveShipRight()" id="RBtn">
     </div>
 </body>
 
