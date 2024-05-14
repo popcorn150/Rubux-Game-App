@@ -17,6 +17,32 @@ h1 {
     border: 3px solid purple;
 }
 
+.score-pag {
+    position: absolute;
+    text-align: center;
+    margin: -27% 0 0 36%;
+    border-radius: 50px;
+    display: none;
+}
+
+.score-pag h5 {
+    margin: 40px 0px 0px 0px;
+    color: white;
+    font-size: 50px;
+    letter-spacing: 2px;
+}
+
+.score-pag p {
+    margin: 10px 0px 20px 0px;
+    color: white;
+    font-size: 50px;
+}
+
+.score-pag button {
+    font-family: "Jersey 10", sans-serif;
+    color: white;
+}
+
 .btn-cntrls {
     display: flex;
     justify-content: space-evenly;

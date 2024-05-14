@@ -12,6 +12,19 @@
 <body>
     <h1>RUBUX</h1>
     <canvas id="playingBoard"></canvas>
+    <div class="score-pag"
+        style="border: 2px solid burlywood; width: 350px; height: 350px; background-color: chocolate;">
+        <h5>Scroe</h5>
+        <p id="playerScore">20</p>
+        <div>
+            <button
+                style="margin-bottom: 10px; width: 250px; height: 50px; border: none; border-radius: 20px; background-color: #97202c; font-size: xx-large;">Quit</button>
+            <br>
+            <button
+                style="margin-top: 20px; width: 250px; height: 55px; border: none; border-radius: 20px; background-color: #198423; padding-top: 2px; font-size: x-large;">Watch
+                Ads to keep on playing...</button>
+        </div>
+    </div>
     <div class="btn-cntrls">
         <img src="/imgs/left-arrowKey.svg" alt="Left ArrowKey" onclick="moveShipLeft()" id="LBtn">
         <button id="shoot" onclick="shootAlien()"

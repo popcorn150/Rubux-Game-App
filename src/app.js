@@ -121,7 +121,7 @@ function update() {
         //increase the number of aliens in columns and rows by 1
         alienColoumns = Math.min(alienColoumns + 1, column / 2 - 2); //cap at 16 / 2 - 2 = 6
         alienRows = Math.min(alienRows + 1, rows - 4); //cap 16 - 4 = 12
-        alienVelocityX += 0.2; //Increase alien's speed after kill
+        alienVelocityX += 0.5; //Increase alien's speed after kill
         alienArray = [];
         bulletArray = [];
         createAliens();
